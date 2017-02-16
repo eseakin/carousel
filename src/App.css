@@ -1,0 +1,62 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.carouselContainer {
+  width: 600px;
+  margin: 50px auto;
+}
+
+.carouselContainer > img {
+  user-select: none;
+  width: 500px;
+}
+
+.leftArrow {
+  margin-top: 20%;
+  font-size: 30px;
+  float: left;
+  transition: .25s all;
+  cursor: pointer;
+  user-select: none;
+  /*color: white;*/
+}
+
+.rightArrow {
+  margin-top: 20%;
+  font-size: 30px;
+  transition: .25s all;
+  cursor: pointer;
+  float: right;
+  user-select: none;
+  /*color: white;*/
+}
+
+.leftArrow:hover, .rightArrow:hover {
+  color: pink;
+}
+
+.leftArrow:active, .rightArrow:active {
+  color: red;
+}
