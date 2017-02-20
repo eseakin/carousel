@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Img from './Img.js';
 
 class App extends Component {
   constructor(props) {
@@ -30,7 +31,7 @@ class App extends Component {
         </div>
         <div className="carouselContainer">
           <div className="leftArrow" onClick={() => {this.handleClick('left')}}>⇦</div>
-          <img src={this.state.photos[this.state.i]} />
+          {this.state.photos.map((photo, i)=> <Img src={this.state.photos[i]} />)}
           <div className="rightArrow"onClick={() => {this.handleClick('right')}}>⇨</div>
         </div>
       </div>

@@ -24,13 +24,10 @@
 }
 
 .carouselContainer {
+  user-select: none;
+  position: relative;
   width: 600px;
   margin: 50px auto;
-}
-
-.carouselContainer > img {
-  user-select: none;
-  width: 500px;
 }
 
 .leftArrow {
