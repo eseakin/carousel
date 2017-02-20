@@ -1,6 +1,6 @@
 .Img > img {
   width: 500px;
+  height: 400px;
   position: absolute;
   top: 0;
-  left: 50px;
 }

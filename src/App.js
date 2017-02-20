@@ -15,10 +15,23 @@ class App extends Component {
   }
 
   handleClick(side) {
-    if(side === 'left' && this.state.currentPic > 0) {
-      this.setState((prevState)=>{currentPic: prevState.currentPic--});
-    } else if(side === 'right' && this.state.currentPic < this.state.photos.length - 1) {
-      this.setState((prevState)=>{currentPic: prevState.currentPic++});
+    let currentPic = this.state.currentPic;
+    let photos = this.state.photos;
+
+    if(side === 'left') {
+      if(currentPic > 0) {
+        this.setState({currentPic: currentPic - 1});
+      }
+      else {
+        this.setState({currentPic: photos.length - 1});
+      }
+    } else if(side === 'right') {
+      if(currentPic < photos.length - 1) {
+        this.setState({currentPic: currentPic + 1});
+      }
+      else {
+        this.setState({currentPic: 0});
+      }
     }
   }
 
@@ -28,6 +41,7 @@ class App extends Component {
         <div className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <h2>Welcome to React</h2>
+          {this.state.currentPic}
         </div>
         <div className="carouselContainer">
           <div className="leftArrow" onClick={() => {this.handleClick('left')}}>⇦</div>

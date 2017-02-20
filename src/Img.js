@@ -15,11 +15,28 @@ class Img extends Component {
   }
 
   render() {
-    return (
-      <div className="Img">
-        <img src={this.props.src} />
-      </div>
-    );
+    if (this.props.currentPic > this.props.i) {
+      //Current Pic is to the Right
+      return (
+        <div className="Img">
+          <img src={this.props.src} style={{left: (50 + 25 * this.props.i) + 'px', zIndex: '-1'}} />
+        </div>
+      );
+    } else if (this.props.currentPic < this.props.i) {
+      //Current Pic is to the Left
+      return (
+        <div className="Img">
+          <img src={this.props.src} style={{left: (50 + 25 * this.props.i) + 'px', zIndex: '-1'}} />
+        </div>
+      );
+    } else {
+      //Is Current Pic
+      return (
+        <div className="Img">
+          <img src={this.props.src} style={{left: (50 + 25 * this.props.i) + 'px', zIndex: '10'}} />
+        </div>
+      );
+    }
   }
 }
 
