@@ -8,17 +8,17 @@ class App extends Component {
     super(props);
     this.state = {
       photos: ['/pics/1.jpg', '/pics/2.jpg', '/pics/3.jpg', '/pics/4.jpg', '/pics/5.jpg', '/pics/6.jpg'],
-      i: 3
+      currentPic: 0
     };
 
     this.handleClick = this.handleClick.bind(this);
   }
 
   handleClick(side) {
-    if(side === 'left' && this.state.i > 0) {
-      this.setState((prevState)=>{i: prevState.i--});
-    } else if(side === 'right' && this.state.i < this.state.photos.length - 1) {
-      this.setState((prevState)=>{i: prevState.i++});
+    if(side === 'left' && this.state.currentPic > 0) {
+      this.setState((prevState)=>{currentPic: prevState.currentPic--});
+    } else if(side === 'right' && this.state.currentPic < this.state.photos.length - 1) {
+      this.setState((prevState)=>{currentPic: prevState.currentPic++});
     }
   }
 
@@ -31,7 +31,7 @@ class App extends Component {
         </div>
         <div className="carouselContainer">
           <div className="leftArrow" onClick={() => {this.handleClick('left')}}>⇦</div>
-          {this.state.photos.map((photo, i)=> <Img src={this.state.photos[i]} />)}
+          {this.state.photos.map((photo, i)=> <Img src={this.state.photos[i]} i={i} currentPic={this.state.currentPic} />)}
           <div className="rightArrow"onClick={() => {this.handleClick('right')}}>⇨</div>
         </div>
       </div>
