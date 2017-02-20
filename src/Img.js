@@ -12,10 +12,14 @@ class Img extends Component {
   setStyle() {
     let currentPic = this.props.currentPic;
     let i = this.props.i;
+    let width = window.innerWidth;
+    let center = width / 2;
+    let containerWidth = width - 100;
+
     this.setState({
       style: {
         left: (150 - 75 * (currentPic - i)) + 'px', 
-        top: -(50 - (Math.abs(currentPic - i)) * 15) + 'px', 
+        top: ((Math.abs(currentPic - i)) * 15) + 'px', 
         zIndex: 5 - (Math.abs(currentPic - i)),
         opacity: (1 - Math.abs(currentPic - i) / 6)
       }
