@@ -25,10 +25,15 @@ class Img extends Component {
 
   componentDidMount() {
     this.setStyle();
+    // window.addEventListener('resize', this.setStyle.bind(this));
   }
 
   componentDidUpdate() {
     this.setStyle();
+  }
+
+  componentWillUnmount() {
+    // window.removeEventListener('resize', this.setStyle.bind(this));
   }
 
   render() {
