@@ -44,11 +44,11 @@ class App extends Component {
           <h2>Welcome to the Carousel</h2>
         </div>
         <div className="carouselContainer" style={{height: (window.innerHeight - 140) + 'px'}}>
-          <div className="leftArrow arrow" onClick={() => {this.handleClick('left')}}>⇦</div>
+          <div className="leftArrow arrow" onClick={() => {this.handleClick('left')}}><p>⇦</p></div>
           <div className="photoContainer">
             {this.state.photos.map((photo, i)=> <Img key={i} src={photo} i={i} currentPic={this.state.currentPic} />)}
           </div>
-          <div className="rightArrow arrow"onClick={() => {this.handleClick('right')}}>⇨</div>
+          <div className="rightArrow arrow"onClick={() => {this.handleClick('right')}}><p>⇨</p></div>
         </div>
       </div>
     );
