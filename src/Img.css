@@ -2,5 +2,5 @@
   width: 500px;
   height: 400px;
   position: absolute;
-  top: 0;
+  transition: .5s all;
 }

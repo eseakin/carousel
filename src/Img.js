@@ -5,6 +5,7 @@ class Img extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      style: {}
     };
 
     this.handleClick = this.handleClick.bind(this);
@@ -14,29 +15,22 @@ class Img extends Component {
 
   }
 
+  componentWillReceiveProps() {
+    this.setState({style: {
+      left: (50 + 25 * this.props.i) + 'px', 
+      top: -(50 - (Math.abs(this.props.currentPic - this.props.i)) * 25) + 'px', 
+      zIndex: 5 - (Math.abs(this.props.currentPic - this.props.i)),
+      opacity: (1 - Math.abs(this.props.currentPic - this.props.i) / 6)
+    }});
+  }
+
   render() {
-    if (this.props.currentPic > this.props.i) {
-      //Current Pic is to the Right
       return (
         <div className="Img">
-          <img src={this.props.src} style={{left: (50 + 25 * this.props.i) + 'px', zIndex: '-1'}} />
+          <img src={this.props.src} style={this.state.style} />
         </div>
       );
-    } else if (this.props.currentPic < this.props.i) {
-      //Current Pic is to the Left
-      return (
-        <div className="Img">
-          <img src={this.props.src} style={{left: (50 + 25 * this.props.i) + 'px', zIndex: '-1'}} />
-        </div>
-      );
-    } else {
-      //Is Current Pic
-      return (
-        <div className="Img">
-          <img src={this.props.src} style={{left: (50 + 25 * this.props.i) + 'px', zIndex: '10'}} />
-        </div>
-      );
-    }
+
   }
 }
 
