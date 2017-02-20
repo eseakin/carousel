@@ -21,14 +21,10 @@ class App extends Component {
     if(side === 'left') {
       if(currentPic > 0) {
         this.setState({currentPic: currentPic - 1});
-      } else {
-        console.log('else')
       }
     } else if(side === 'right') {
       if(currentPic < length - 1) {
         this.setState({currentPic: currentPic + 1});
-      } else {
-        console.log('else')
       }
     }
   }
@@ -39,7 +35,6 @@ class App extends Component {
         <div className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <h2>Welcome to React</h2>
-          {this.state.currentPic}
         </div>
         <div className="carouselContainer">
           <div className="leftArrow" onClick={() => {this.handleClick('left')}}>⇦</div>
