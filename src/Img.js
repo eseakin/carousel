@@ -14,7 +14,7 @@ class Img extends Component {
     let i = this.props.i;
     this.setState({
       style: {
-        left: (50 + 75 * i) + 'px', 
+        left: (150 - 75 * (currentPic - i)) + 'px', 
         top: -(50 - (Math.abs(currentPic - i)) * 15) + 'px', 
         zIndex: 5 - (Math.abs(currentPic - i)),
         opacity: (1 - Math.abs(currentPic - i) / 6)

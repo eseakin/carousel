@@ -30,30 +30,29 @@
   margin: 70px auto;
 }
 
-.leftArrow {
-  margin-top: 20%;
+.arrow {
   font-size: 30px;
-  float: left;
+  position: absolute;
   transition: .25s all;
   cursor: pointer;
   user-select: none;
-  /*color: white;*/
+  z-index: 20;
+}
+
+.leftArrow {
+  top: 20%;
+  left: 0;
 }
 
 .rightArrow {
-  margin-top: 20%;
-  font-size: 30px;
-  transition: .25s all;
-  cursor: pointer;
-  float: right;
-  user-select: none;
-  /*color: white;*/
+  top: 20%;
+  right: 0;
 }
 
-.leftArrow:hover, .rightArrow:hover {
+.arrow:hover {
   color: pink;
 }
 
-.leftArrow:active, .rightArrow:active {
+.arrow:active {
   color: red;
 }

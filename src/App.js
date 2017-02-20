@@ -37,9 +37,9 @@ class App extends Component {
           <h2>Welcome to React</h2>
         </div>
         <div className="carouselContainer">
-          <div className="leftArrow" onClick={() => {this.handleClick('left')}}>⇦</div>
+          <div className="leftArrow arrow" onClick={() => {this.handleClick('left')}}>⇦</div>
           {this.state.photos.map((photo, i)=> <Img key={i} src={photo} i={i} currentPic={this.state.currentPic} />)}
-          <div className="rightArrow"onClick={() => {this.handleClick('right')}}>⇨</div>
+          <div className="rightArrow arrow"onClick={() => {this.handleClick('right')}}>⇨</div>
         </div>
       </div>
     );
