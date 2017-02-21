@@ -13,7 +13,6 @@ class Img extends Component {
     let currentPic = this.props.currentPic;
     let i = this.props.i;
     let diff = Math.abs(currentPic - i);
-    console.log('setStyle', diff)
 
     this.setState({
       style: {
