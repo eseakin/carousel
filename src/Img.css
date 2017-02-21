@@ -2,10 +2,11 @@
   width: 600px;
   height: 400px;
   position: absolute;
-  transition: .5s all;
+  transition: .75s all;
   border-radius: 4px;
   border: 1px solid black;
   box-shadow: 0px 10px 20px black;
+  user-select: none;
 }
 
 .text {
