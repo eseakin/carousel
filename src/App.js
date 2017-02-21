@@ -29,10 +29,12 @@ class App extends Component {
     if(side === 'left') {
       if(currentPic > 0) {
         this.setState({currentPic: currentPic - 1});
+        // this.update();
       }
     } else if(side === 'right') {
       if(currentPic < length - 1) {
         this.setState({currentPic: currentPic + 1});
+        // this.update();
       }
     }
   }
@@ -46,7 +48,20 @@ class App extends Component {
         <div className="carouselContainer" style={{height: (window.innerHeight - 140) + 'px'}}>
           <div className="leftArrow arrow" onClick={() => {this.handleClick('left')}}><p>⇦</p></div>
           <div className="photoContainer">
-            {this.state.photos.map((photo, i)=> <Img key={i} src={photo} i={i} currentPic={this.state.currentPic} />)}
+            {this.state.photos.map( (photo, i)=> {
+              let currentPic = this.state.currentPic;
+              let diff = Math.abs(currentPic - i);
+
+              let style = {
+                left: (window.innerWidth / 2 - 300 - 75 * (currentPic - i)) + 'px', 
+                top: (20 + diff * 15) + 'px', 
+                zIndex: 5 - diff,
+                opacity: 1 - diff / 6,
+                display: diff < 5 ? 'block' : 'none'
+              }
+
+              return <Img key={i} src={photo} i={i} currentPic={this.state.currentPic} style={style}/>
+            })}
           </div>
           <div className="rightArrow arrow"onClick={() => {this.handleClick('right')}}><p>⇨</p></div>
         </div>
